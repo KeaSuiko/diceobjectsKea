@@ -1,12 +1,15 @@
 let dice = [];
 let numberOfDice = 10;
-let saved tem
+let savedtime = 0;
+let totaltime = 30000; 
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < numberOfDice; i++) {
     dice[i] = new Die(100); // argument is the size of the die
   }
+  savedtime = millis();
 }
 
 function draw() {
@@ -17,10 +20,17 @@ function draw() {
   for (let i = 0; i < dice.length; i++) {
     const die = dice[i]; // 'die' is a temporary variable for the current array item
     die.place(die.size*1.2*i+die.size, die.size*2); // place the die neatly in the row
-    die.display(); // actually draw it on screen
-  }
+      die.display();} // actually draw it on screen
 
+      let passedtime = millis() - savedtime;
+  if (passedtime > totaltime) {
+    console.log("thirty seconds have passed!");
+    background("red");
+    text("Time Is Up!", 100, 100)
+    //savedtime = millis();
 }
+}
+
 
 function mouseClicked() {
   // loop over the array of dice...
