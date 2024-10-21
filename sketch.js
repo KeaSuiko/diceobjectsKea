@@ -1,7 +1,7 @@
 let dice = [];
 let numberOfDice = 10;
 let savedtime = 0;
-let totaltime = 30000; 
+let totaltime = 20000; 
 
 
 function setup() {
@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background("lightblue");
-  text("Roll All The Same Number Before The Dice Disappear!", 600, 100)
+  text("Roll All The Same Number Before Time Runs Out!", 600, 100)
   text("Press any key to roll all of the die. Click a die to stop rolling it.", 600, 300)
   // loop over the array and place+display each die
   for (let i = 0; i < dice.length; i++) {
