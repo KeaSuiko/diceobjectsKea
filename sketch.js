@@ -1,16 +1,18 @@
 let dice = [];
-let numberOfDice = 5;
+let numberOfDice = 10;
+let saved tem
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < numberOfDice; i++) {
-    dice[i] = new Die(50); // argument is the size of the die
+    dice[i] = new Die(100); // argument is the size of the die
   }
 }
 
 function draw() {
-  background("darkolivegreen");
-  
+  background("lightblue");
+  text("Roll All The Same Number Before The Dice Disappear!", 600, 100)
+  text("Press any key to roll all of the die. Click a die to stop rolling it.", 600, 300)
   // loop over the array and place+display each die
   for (let i = 0; i < dice.length; i++) {
     const die = dice[i]; // 'die' is a temporary variable for the current array item
